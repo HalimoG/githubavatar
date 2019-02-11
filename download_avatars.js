@@ -14,11 +14,18 @@ function getRepoContributors(repoOwner, repoName, cb) {
         }
       };
     request(options, function(err, res, body) {
-      cb(err, body);
+        var parsedBody = JSON.parse(body);
+        cb(err, parsedBody);
     });
   }
 
   getRepoContributors("jquery", "jquery", function(err, result) {
     console.log("Errors:", err);
-    console.log("Result:", result);
+    result.forEach(function(contributor){
+        console.log(contributor.avatar_url)
+
+    })
+    // console.log("Result:", result);
   });
+
+  
