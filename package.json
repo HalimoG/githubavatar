@@ -1,0 +1,23 @@
+{
+  "name": "githubavatar",
+  "version": "1.0.0",
+  "description": "## Problem Statement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HalimoG/githubavatar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HalimoG/githubavatar/issues"
+  },
+  "homepage": "https://github.com/HalimoG/githubavatar#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
