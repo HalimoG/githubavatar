@@ -25,7 +25,11 @@ function getRepoContributors(repoOwner, repoName, cb) {
         console.log(contributor.avatar_url)
 
     })
-    // console.log("Result:", result);
   });
 
-  
+  function downloadImageByURL(url, filePath) {
+    var fs = require('fs');
+    request.get(url).pipe(fs.createWriteStream(filePath));         
+  }
+
+  downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg");
