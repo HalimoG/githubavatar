@@ -20,16 +20,16 @@ function getRepoContributors(repoOwner, repoName, cb) {
   }
 
   getRepoContributors("jquery", "jquery", function(err, result) {
-    console.log("Errors:", err);
-    result.forEach(function(contributor){
-        console.log(contributor.avatar_url)
 
+    result.forEach(function(contributor){
+        var fs = require('fs');
+       downloadImageByURL(contributor.avatar_url, `avatars/${contributor.login}.jpg`);  
+        
     })
   });
 
-  function downloadImageByURL(url, filePath) {
+  function downloadImageByURL( url, filePath) {
     var fs = require('fs');
     request.get(url).pipe(fs.createWriteStream(filePath));         
   }
 
-  downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg");
